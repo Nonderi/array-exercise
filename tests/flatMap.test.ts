@@ -1,8 +1,8 @@
-import {flatMap} from "../src/array-functions";
+import {flatMap, map} from "../src/array-functions";
 
 describe('flatMap', () => {
     test('flatMap should map arrays to flat list', () => {
-        const arr = flatMap([1,2,3], (it) => {
+        const arr = flatMap([1,2,3], (it,index) => {
             return [it]
         })
         expect(arr).toStrictEqual([1, 2, 3]);
