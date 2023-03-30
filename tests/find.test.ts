@@ -8,7 +8,7 @@ describe('find', () => {
         expect(match).toBe(2);
     })
 
-    test('find should return undefined if match is found', () => {
+    test('find should return undefined if match is not found', () => {
         const match = find([1,2,3], (it) => {
             return it === 4
         })
@@ -26,8 +26,8 @@ describe('find', () => {
 
     test('find should be called with all arguments', () => {
         const acc = []
-        find(['a','b','c'], (...args) => {
-            acc.push(args)
+        find(['a','b','c'], (value, index, array) => {
+            acc.push([value, index, array])
             return false;
         })
         expect(acc).toStrictEqual([
