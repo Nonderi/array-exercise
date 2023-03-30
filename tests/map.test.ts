@@ -1,6 +1,7 @@
-import {map} from "../src/array-functions";
+import {flatMap, map} from "../src/array-functions";
 
 describe('map', () => {
+
     test('map should map items to new values', () => {
         const arr = map([1,2,3], (it) => {
             return `${it + 1}`
