@@ -88,13 +88,6 @@ export function map<T, R>(arr: T[], callback: MapFunction<T, R>): R[] {
   return acc;
 }
 
-/*
-map([1, 2, 3], (n: number): number => n + 1); // [2, 3, 4]
-map([1,2,3], function(n: number): number {
-    return n + 1;
-})
-map([{name: 'Joona'}, {name: 'Noona'}], p => p.name); // ['Joona', 'Noona']
-*/
 
 type FlatMapFunction<T, R> = (item: T, index: number, arr: T[]) => R[] | R;
 export function flatMap<T, R>(arr: T[], callback: FlatMapFunction<T, R>): R[] {
@@ -124,6 +117,9 @@ export function reverse<T>(arr: T[]): T[] {
   return arr;
 }
 
+// TODO:
+
+// Reduce not done: 1/2 tests pass
 type ReduceFunction<T, R> = (acc: R, item: T, index: number, arr: T[]) => R;
 export function reduce<T, R>(
   arr: T[],
